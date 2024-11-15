@@ -15,7 +15,7 @@ describe("QueryProcessor", () => {
             "William Shakespeare (26 April 1564 - 23 April 1616) was an " +
             "English poet, playwright, and actor, widely regarded as the greatest " +
             "writer in the English language and the world's pre-eminent dramatist."
-          ));
+        ));
     });
 
     // TODO: Deberías actualizar la prueba a continuación después de añadir tu USB ID
@@ -23,7 +23,7 @@ describe("QueryProcessor", () => {
         const query = "what's your USB ID?";
         const response: string = QueryProcessor(query);
         expect(response).toBe((
-		"YOUR USB ID SHOULD BE HERE"
-    	));
+            "YOUR USB ID IS 19-10096."
+        ));
     });
 });
