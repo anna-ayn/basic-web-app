@@ -33,10 +33,12 @@ export default function QueryProcessor(query: string): string {
   }
 
   if (query.toLowerCase().includes("multiplied by")) {
-    const numbers = query.match(/\d+/g)?.map(Number);
+    const numbers = query.match(/-?\d+/g)?.map(Number);
     if (numbers) {
       return numbers.reduce((a, b) => a * b).toString();
     }
   }
+
+
   return "";
 }
