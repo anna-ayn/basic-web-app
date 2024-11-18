@@ -55,7 +55,10 @@ export default function QueryProcessor(query: string): string {
         return Number.isInteger(sqrt) && Number.isInteger(cbrt);
       };
       const results = numbers.filter(isSquareAndCube);
-      if (results.length > 0) {
+      if (results.length == 1) {
+        return results[0].toString();
+      }
+      if (results.length > 1) {
         return results.join(", ");
       }
     }
@@ -72,7 +75,12 @@ export default function QueryProcessor(query: string): string {
         return true;
       };
       const primes = numbers.filter(isPrime);
-      return primes.join(", ");
+      if (primes.length == 1) {
+        return primes[0].toString();
+      } 
+      if (primes.length > 1) {
+        return primes.join(", ");
+      }
     }
   }
 
