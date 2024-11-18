@@ -31,4 +31,5 @@ export default function QueryProcessor(query: string): string {
       return numbers.reduce((a, b) => a + b).toString();
     }
   }
+  return "";
 }
