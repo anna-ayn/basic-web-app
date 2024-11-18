@@ -26,7 +26,7 @@ export default function QueryProcessor(query: string): string {
   }
 
   if (query.toLowerCase().includes("plus")) {
-    const numbers = query.match(/\d+/g)?.map(Number);
+    const numbers = query.match(/-?\d+/g)?.map(Number);
     if (numbers) {
       return numbers.reduce((a, b) => a + b).toString();
     }
@@ -36,6 +36,13 @@ export default function QueryProcessor(query: string): string {
     const numbers = query.match(/-?\d+/g)?.map(Number);
     if (numbers) {
       return numbers.reduce((a, b) => a * b).toString();
+    }
+  }
+
+  if (query.toLowerCase().includes("minus")) {
+    const numbers = query.match(/-?\d+/g)?.map(Number);
+    if (numbers) {
+      return numbers.reduce((a, b) => a - b).toString();
     }
   }
 
