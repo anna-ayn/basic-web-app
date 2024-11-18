@@ -75,9 +75,21 @@ describe("QueryProcessor", () => {
         expect(response).toBe("1, 64");
     });
 
+    test("should return numbers that are both square and cube", () => {
+        const query = "Which of the following numbers is both a square and a cube: 1, 8, 27, 65?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("1");
+    });
+
     test("should return prime numbers", () => {
         const query = "Which of the following numbers are primes: 2, 3, 4, 5, 6, 7, 8, 9?";
         const response: string = QueryProcessor(query);
         expect(response).toBe("2, 3, 5, 7");
+    });
+
+    test("should return prime numbers", () => {
+        const query = "Which of the following numbers are primes: 10, 50, 35, 10, 12, 13, 15?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("13");
     });
 });
