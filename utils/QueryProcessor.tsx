@@ -39,6 +39,21 @@ export default function QueryProcessor(query: string): string {
     }
   }
 
+  if (query.toLowerCase().includes("which of the following numbers is both a square and a cube")) {
+    const numbers = query.match(/\d+/g)?.map(Number);
+    if (numbers) {
+      const isSquareAndCube = (num: number) => {
+        const sqrt = Math.sqrt(num);
+        const cbrt = Math.cbrt(num);
+        return Number.isInteger(sqrt) && Number.isInteger(cbrt);
+      };
+      const result = numbers.find(isSquareAndCube);
+      if (result !== undefined) {
+        return result.toString();
+      }
+    }
+  }
+
 
   return "";
 }
