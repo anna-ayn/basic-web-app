@@ -13,9 +13,16 @@ export default function QueryProcessor(query: string): string {
     return ( "YOUR USB ID IS 19-10096." );
   }
 
-  if (query.toLowerCase().includes("what is your name?")) {
+  if (query.toLowerCase().includes("what is your name")) {
     // agrega tu nombre aquí
     return ( "annayi" );
+  }
+
+  if (query.toLowerCase().includes("which of the following numbers is the largest")) {
+    const numbers = query.match(/\d+/g)?.map(Number);
+    if (numbers) {
+      return Math.max(...numbers).toString();
+    }
   }
   return "";
 }
