@@ -12,5 +12,10 @@ export default function QueryProcessor(query: string): string {
     // TODO actualiza el caso de prueba correspondiente en __tests__
     return ( "YOUR USB ID IS 19-10096." );
   }
+
+  if (query.toLowerCase().includes("what is your name?")) {
+    // agrega tu nombre aquí
+    return ( "annayi" );
+  }
   return "";
 }
