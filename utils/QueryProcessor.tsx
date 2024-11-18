@@ -47,9 +47,9 @@ export default function QueryProcessor(query: string): string {
         const cbrt = Math.cbrt(num);
         return Number.isInteger(sqrt) && Number.isInteger(cbrt);
       };
-      const result = numbers.find(isSquareAndCube);
-      if (result !== undefined) {
-        return result.toString();
+      const results = numbers.filter(isSquareAndCube);
+      if (results.length > 0) {
+        return results.join(", ");
       }
     }
   }
